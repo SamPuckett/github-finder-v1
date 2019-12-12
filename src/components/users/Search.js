@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 export class Search extends Component {
   state = {
     text: ""
+  };
+
+  static propTypes = {
+    searchUsers: PropTypes.func.isRequired
   };
 
   onChange = e => {
@@ -13,7 +18,8 @@ export class Search extends Component {
 
   onSubmit = e => {
     e.preventDefault(); // This prevents the page from refreshing whenever we click 'submit'.
-    console.log(this.state.text);
+    this.props.searchUsers(this.state.text);
+    this.setState({ text: "" });
   };
 
   render() {
