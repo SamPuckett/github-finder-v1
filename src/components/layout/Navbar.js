@@ -10,9 +10,11 @@ const Navbar = ({ icon, title }) => {
       </h1>
       <ul>
         <li>
+          {/* This is where we swapped the <a> tags for <Link> tags to prevent full refresh of page */}
           <Link to='/'>Home</Link>
         </li>
         <li>
+          {/* This is where we swapped the <a> tags for <Link> tags to prevent full refresh of page */}
           <Link to='/about'>About</Link>
         </li>
       </ul>
