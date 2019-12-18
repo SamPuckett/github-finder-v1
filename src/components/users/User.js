@@ -35,6 +35,7 @@ export class User extends Component {
       company
     } = this.props.user;
 
+    // destructure the variables from props
     const { loading, repos } = this.props;
 
     if (loading) {
