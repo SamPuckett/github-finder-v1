@@ -38,6 +38,7 @@ export class User extends Component {
     // destructure the variables from props
     const { loading, repos } = this.props;
 
+    // returns a spinner if the state is loading
     if (loading) {
       return <Spinner />;
     }
