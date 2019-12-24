@@ -37,12 +37,6 @@ const App = () => {
     setLoading(false);
   };
 
-  // Clear users from state
-  const clearUsers = () => {
-    setUsers([]);
-    setLoading(false);
-  };
-
   // Set Alert
   const showAlert = (msg, type) => {
     setAlert({ msg, type });
@@ -63,12 +57,8 @@ const App = () => {
                 path='/'
                 render={props => (
                   <>
-                    <Search
-                      clearUsers={clearUsers}
-                      showClear={users.length > 0 ? true : false}
-                      setAlert={showAlert}
-                    />
-                    <Users loading={loading} users={users} />
+                    <Search setAlert={showAlert} />
+                    <Users />
                   </>
                 )}
               />
