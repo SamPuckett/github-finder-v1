@@ -1,10 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 /* Global Styles */
 :root {
-  --primary-color: #dc3545;
-  --dark-color: #333333;
-  --light-color: #f4f4f4;
+  --primary-color: #1d35b8;
+  --dark-color: #091038;
+  --middle-color: #111f6b;
+  --middle-color-alt: #3d4784;
+  --light-color: #5463b8;
   --danger-color: #dc3545;
   --success-color: #28a745;
 }
@@ -16,20 +18,20 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
-  color: #333;
+  background-color: rgba(84, 99, 184, 0.5);
+  color: #fff;
 }
 
 a {
-  color: var(--primary-color);
+  color: #fff;
   text-decoration: none;
 }
 
 a:hover {
-  color: #666;
+  color: var(--light-color);
 }
 
 ul {
@@ -80,10 +82,16 @@ img {
 
 .text-success {
   color: var(--success-color);
+  background-color: white;
+  border: 3px solid white;
+  border-radius: 5px;
 }
 
 .text-danger {
   color: var(--danger-color);
+  background-color: white;
+  border: 3px solid white;
+  border-radius: 5px;
 }
 
 .text-center {
@@ -109,11 +117,23 @@ img {
   text-align: center;
 }
 
+/* Center Vert & Left Horz All */
+.all-center-left {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
 /* Cards */
 .card {
   padding: 1rem;
-  border: #ccc 1px dotted;
   margin: 0.7rem 0;
+  background-color: rgba(9, 16, 56, 0.75);
+  border-radius: 5px;
 }
 
 /* List */
@@ -207,6 +227,7 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+  border-radius: 5px;
 }
 
 .btn-link {
@@ -249,7 +270,7 @@ img {
 .bg-primary,
 .badge-primary,
 .alert-primary {
-  background: var(--primary-color);
+  background: var(--dark-color);
   color: #fff;
 }
 
@@ -258,14 +279,14 @@ img {
 .badge-light,
 .alert-light {
   background: var(--light-color);
-  color: #333;
+  color: #fff;
 }
 
 .btn-dark,
 .bg-dark,
 .badge-dark,
 .alert-dark {
-  background: var(--dark-color);
+  background: var(--primary-color);
   color: #fff;
 }
 
@@ -295,7 +316,8 @@ img {
 }
 
 .btn:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+  box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .bg-light,
@@ -318,20 +340,21 @@ input {
   color: #888;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="date"],
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'],
 select,
 textarea {
   display: block;
   width: 100%;
-  padding: 0.4rem;
-  font-size: 1.2rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
   border: 1px solid #ccc;
 }
 
-input[type="submit"],
+input[type='submit'],
 button {
   font: inherit;
 }
@@ -356,6 +379,8 @@ table th {
   width: 100%;
   opacity: 0.9;
   margin-bottom: 1rem;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .navbar ul {
@@ -369,7 +394,9 @@ table th {
 }
 
 .navbar a:hover {
-  color: var(--light-color);
+  background-color: rgba(84, 99, 184, 0.5);
+  border-radius: 5px;
+  box-shadow: black;
 }
 
 .navbar .welcome span {

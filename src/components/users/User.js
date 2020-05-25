@@ -1,8 +1,8 @@
-import React, { useEffect, useContext } from "react";
-import Spinner from "../layout/Spinner";
-import Repos from "../repos/Repos";
-import { Link } from "react-router-dom";
-import GithubContext from "../../context/github/githubContext";
+import React, { useEffect, useContext } from 'react';
+import Spinner from '../layout/Spinner';
+import Repos from '../repos/Repos';
+import { Link } from 'react-router-dom';
+import GithubContext from '../../context/github/githubContext';
 
 // destructure the variables from props.
 const User = ({ match }) => {
@@ -27,7 +27,7 @@ const User = ({ match }) => {
     public_repos,
     public_gists,
     hireable,
-    company
+    company,
   } = user;
 
   // returns a spinner if the state is loading
@@ -40,7 +40,7 @@ const User = ({ match }) => {
       <Link to='/' className='btn btn-light'>
         Back To Search
       </Link>
-      Hireable:{" "}
+      <span style={{ color: '#000' }}>Hireable:</span>{' '}
       {hireable ? (
         <i className='fas fa-check text-success' />
       ) : (
@@ -51,13 +51,13 @@ const User = ({ match }) => {
           <img
             src={avatar_url}
             className='round-img'
-            style={{ width: "150px" }}
+            style={{ width: '150px' }}
             alt='users avatar'
           />
           <h1>{name}</h1>
           <p>Location: {location}</p>
         </div>
-        <div>
+        <div className='all-center-left'>
           {bio && (
             <>
               <h3>Bio</h3>

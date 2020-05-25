@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
-import GithubContext from "../../context/github/githubContext";
-import AlertContext from "../../context/alert/alertContext";
+import React, { useState, useContext } from 'react';
+import GithubContext from '../../context/github/githubContext';
+import AlertContext from '../../context/alert/alertContext';
 
 const Search = () => {
   const githubContext = useContext(GithubContext);
@@ -9,19 +9,19 @@ const Search = () => {
   const { clearUsers, searchUsers, users } = githubContext;
   const { setAlert } = alertContext;
 
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
 
-  const onChange = e => {
+  const onChange = (e) => {
     setText(e.target.value);
   };
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault(); // This prevents the page from refreshing whenever we click 'submit'.
-    if (text === "") {
-      setAlert("Please enter something", "light");
+    if (text === '') {
+      setAlert('Please enter something', 'light');
     } else {
       searchUsers(text);
-      setText("");
+      setText('');
     }
   };
 
